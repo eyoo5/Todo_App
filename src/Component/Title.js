@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-const Title = () => {
-  return (
-    <div id="title">
-      <form
-        onSubmit={(event) => {
-          const title = event.target.value;
-          window.todoAPI.setTitle(title);
-        }}
-      >
-        Title of List: <input id="title" type="text" />
-        <button id="btn" className="submitBtn">
-          set
-        </button>
-      </form>
-    </div>
-  );
-};
+// const Title = () => {
+//   return (
+//     <div
+//       id="title"
+//       onSubmit={(event) => {
+//         const title = event.target.value;
+//         window.todoAPI.setTitle(title);
+//       }}
+//     >
+//       Title of List: <input type="text" />
+//       <button type="submit" className="submitBtn">
+//         set
+//       </button>
+//     </div>
+//   );
+// };
 
-export default Title;
+// export default Title;

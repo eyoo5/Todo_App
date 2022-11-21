@@ -5,14 +5,24 @@ import { Grid } from "ag-grid-community";
 import React from "react";
 import { createRoot } from "react-dom/client";
 import Title from "./Component/Title";
+// import storage from "electron-json-storage";
+// import os from "os";
 
-const container = document.getElementById("app");
-const root = createRoot(container);
-root.render(
-  <div>
-    <Title />
-  </div>
-);
+// storage.setDataPath(os.tmpdir());
+// const container = document.getElementById("app");
+// const root = createRoot(container);
+// root.render(
+//   <div>
+//     <Title />
+//   </div>
+// );
+
+const setButton = document.getElementById("btn");
+const titleInput = document.getElementById("title");
+setButton.addEventListener("click", () => {
+  const title = titleInput.value;
+  window.todoAPI.setTitle(title);
+});
 
 let rowData = [];
 

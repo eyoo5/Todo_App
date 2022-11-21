@@ -20,13 +20,25 @@ h2 {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-#title {
+#changeTitle {
   margin-bottom: 1em;
   font-size: large;
-  display: grid;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+#title {
+  width: 40%;
+  justify-content: center;
+}
+#btn {
+  padding: 0.3rem;
+  background: darkcyan;
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  margin-left: 0.5em;
+}
 .container {
   margin: auto;
   display: flex;

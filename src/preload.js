@@ -8,5 +8,7 @@ contextBridge.exposeInMainWorld("todoAPI", {
     return ipcRenderer.invoke("restore-from-file");
   },
   node: () => process.versions.node,
+  electron: () => proecess.versions.electron,
+  chrome: () => process.versions.chrome,
   setTitle: (title) => ipcRenderer.send("set-title", title),
 });
