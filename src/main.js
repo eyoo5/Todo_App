@@ -5,6 +5,13 @@ const path = require("path");
 if (require("electron-squirrel-startup")) {
   app.quit();
 }
+
+function handleSetTitle(event, title) {
+  const webContents = event.sender;
+  const win = BrowserWindow.fromWebContents(webContents);
+  win.setTitle(title);
+}
+
 const handleCommunication = () => {
   ipcMain.removeHandler("save-to-file");
   ipcMain.removeHandler("restore-from-file");
@@ -57,8 +64,10 @@ const createWindow = () => {
     width: 800,
     height: 600,
     backgroundColor: "#faf0e6",
+    icon: "./images/Icon.png",
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      enableRemoteModule: true,
     },
   });
 
@@ -69,10 +78,14 @@ const createWindow = () => {
   handleCommunication();
 };
 
+app.whenReady().then(() => {
+  ipcMain.on("set-title", handleSetTitle);
+  createWindow();
+});
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on("ready", createWindow);
+// app.on("ready", createWindow);
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits

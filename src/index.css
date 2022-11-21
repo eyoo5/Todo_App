@@ -8,12 +8,25 @@ h1 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+h2 {
+  color: #9ca3af;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 #grid {
   width: 100%;
   flex: 1;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
+#title {
+  margin-bottom: 1em;
+  font-size: large;
+  display: grid;
+  text-align: center;
+}
+
 .container {
   margin: auto;
   display: flex;
@@ -74,4 +87,13 @@ h1 {
 }
 .remove-btn:hover {
   background-color: #f87171;
+}
+
+.submitBtn {
+  padding: 0.3rem;
+  background: darkcyan;
+  border: none;
+  color: #fff;
+  font-size: 0.8rem;
+  margin-left: 0.5em;
 }
